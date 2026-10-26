@@ -1,0 +1,18 @@
+[
+  {
+    "shot_id": "S001",
+    "scene": "车站",
+    "visual": "小雨站在长椅旁，拿着一把被遗忘的伞。",
+    "dialogue": "",
+    "duration_seconds": 5,
+    "notes": "合成演示内容，可自由修改。"
+  },
+  {
+    "shot_id": "S002",
+    "scene": "车站",
+    "visual": "失主走回长椅，小雨把伞交给对方。",
+    "dialogue": "谢谢你。",
+    "duration_seconds": 6,
+    "notes": "时长是演示输入，不是系统推荐或测量结果。"
+  }
+]

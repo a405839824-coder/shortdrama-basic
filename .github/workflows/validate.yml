@@ -1,0 +1,25 @@
+name: Validate basic edition
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  test:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m venv .venv
+      - run: |
+          if [ "$RUNNER_OS" = "Windows" ]; then PY=.venv/Scripts/python.exe; else PY=.venv/bin/python; fi
+          "$PY" -m pip install -r requirements.txt
+          "$PY" scripts/configure_local_mcp.py
+          "$PY" -m unittest discover -s tests -v
+          "$PY" tests/stdio_smoke.py
+          "$PY" scripts/configure_local_mcp.py --portable
+          "$PY" scripts/package_source.py
+        shell: bash

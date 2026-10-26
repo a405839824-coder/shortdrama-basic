@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "shortdrama-basic": {
+      "cwd": ".",
+      "command": "./.venv/bin/python",
+      "args": ["./server/main.py", "--stdio"],
+      "env": {"PYTHONUTF8": "1"}
+    }
+  }
+}

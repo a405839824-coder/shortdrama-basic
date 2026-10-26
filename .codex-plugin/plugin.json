@@ -1,0 +1,18 @@
+{
+  "name": "shortdrama-basic",
+  "version": "0.1.0",
+  "description": "Local source-text storage, generic storyboard tables, and Excel export through MCP.",
+  "author": {"name": "a405839824-coder"},
+  "keywords": ["storyboard", "mcp", "excel", "local"],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "分镜基础工具",
+    "shortDescription": "本地管理原文、编辑基础分镜表并导出 Excel",
+    "longDescription": "Shortdrama Basic 0.1.0 提供 8 个本地 MCP 工具，支持项目管理、原文存取、基础分镜表保存与 Excel 导出。使用单独的数据目录和通用表格结构；创作由用户或所连接的模型完成，服务端不包含专有分镜规则、生成引擎或语义审查。",
+    "developerName": "a405839824-coder",
+    "category": "Productivity",
+    "capabilities": ["Read", "Write"],
+    "defaultPrompt": ["创建一个基础分镜项目，保存我提供的短文，帮我整理分镜表并导出 Excel。"]
+  }
+}
