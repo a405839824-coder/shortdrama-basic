@@ -112,7 +112,7 @@ class PackagingTests(unittest.TestCase):
     def setUp(self):
         self.temporary = tempfile.TemporaryDirectory(prefix="basic package test ")
         self.addCleanup(self.temporary.cleanup)
-        self.root = Path(self.temporary.name) / "source"
+        self.root = (Path(self.temporary.name) / "source").resolve()
         for name in PUBLIC_FILES:
             target = self.root / name
             target.parent.mkdir(parents=True, exist_ok=True)
