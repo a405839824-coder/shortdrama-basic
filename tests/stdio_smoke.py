@@ -54,7 +54,7 @@ async def check():
                 assert current["revision"] == saved["revision"] and current["shots"] == shots
                 exported = await call("export_storyboard", {"project_id": project_id})
                 path = Path(exported["path"])
-                assert path.is_relative_to(Path(temporary)) and path.is_file()
+                assert path.resolve().is_relative_to(Path(temporary).resolve()) and path.is_file()
                 workbook = load_workbook(path)
                 try:
                     assert workbook.sheetnames == ["Storyboard", "Project"]
